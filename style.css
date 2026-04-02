@@ -2549,3 +2549,16 @@ h6 {
         left: 16px;
     }
 }
+
+/* ====== FIX NAVBAR OVERLAP & iPHONE NOTCH ====== */
+.navbar {
+    background-color: #0a1f1b !important; /* Forces a solid dark background */
+    padding-top: max(15px, env(safe-area-inset-top)) !important; /* Protects from iPhone notch */
+    z-index: 9999 !important; /* Keeps it above all form fields */
+}
+
+.navbar.scrolled {
+    background-color: #0a1f1b !important; 
+    padding-top: max(10px, env(safe-area-inset-top)) !important; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important; /* Adds a nice shadow over the form */
+}
