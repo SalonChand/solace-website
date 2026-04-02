@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Solace at Sundown</title>
+    <meta name="description"
+        content="Book your luxury nature retreat at Solace at Sundown. Contact us for reservations, package inquiries, and availability.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skeleton Hero Placeholder -->
+    <div class="skeleton skeleton-hero" id="heroSkeleton"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+            </a>
+            <div class="weather-widget" id="weatherWidget">
+                <i class="fas fa-cloud-sun weather-icon"></i>
+                <span id="weatherInfo">Shivapuri: --°C</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta">Book Now</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content" data-aos="fade-up">
+            <div class="section-label">Get in Touch</div>
+            <h1 class="page-hero-title">Contact & Book</h1>
+            <p class="page-hero-subtitle">Reach out to us and we'll make sure your stay is perfect.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">Book Your Stay</div>
+                <h2 class="section-title">We'd Love to Hear From You</h2>
+                <p class="section-subtitle">Fill out the form below with your details and preferences, and we'll get
+                    back to you within 24 hours.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form" data-aos="fade-right">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" placeholder="+977 98XXXXXXXX">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkin">Check-in Date</label>
+                                <input type="date" id="checkin">
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout">Check-out Date</label>
+                                <input type="date" id="checkout">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests">
+                                    <option value="">Select guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3-4">3-4 Guests</option>
+                                    <option value="5-8">5-8 Guests</option>
+                                    <option value="9+">9+ Guests (Group)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="package">Interested Package</label>
+                                <select id="package">
+                                    <option value="">Select package</option>
+                                    <option value="serenity">Serenity Stay</option>
+                                    <option value="sunset">Sunset Experience</option>
+                                    <option value="family">Family Retreat</option>
+                                    <option value="custom">Custom Package</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Special Requests</label>
+                            <textarea id="message"
+                                placeholder="Tell us about your ideal stay, special requirements, celebrations, etc."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Send Booking Inquiry <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info" data-aos="fade-left">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Mulkharka, Shivapuri National Park<br>Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+9779709137245">+977 9709137245</a></p>
+                            <p style="font-size: 0.82rem;">Call or WhatsApp — 9 AM to 8 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@solaceatsundown.com">info@solaceatsundown.com</a></p>
+                            <p style="font-size: 0.82rem;">We respond within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Check-in / Check-out</h4>
+                            <p>Check-in: 2:00 PM<br>Check-out: 12:00 PM</p>
+                            <p style="font-size: 0.82rem;">Early check-in available on request</p>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14127.354638815555!2d85.3657!3d27.78!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a60f4a3c69%3A0x2b8bbc94ef7b0c26!2sShivapuri%20National%20Park!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Solace at Sundown Location"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                        <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+                    </a>
+                    <p>Nestled in Shivapuri National Park, Solace at Sundown offers immersive nature experiences,
+                        luxurious tents, and peaceful escapes.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="TripAdvisor"><i
+                                class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#sunset">Sunset Camps</a></li>
+                        <li><a href="services.html#garden">Garden Camps</a></li>
+                        <li><a href="services.html#family">Family Retreats</a></li>
+                        <li><a href="services.html#dining">Jungle Dining</a></li>
+                        <li><a href="services.html#bbq">Campfire Evenings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mulkharka, Kathmandu,
+                            Nepal</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+977 9742590718</span></div>
+                    <div class="footer-contact-item"><i
+                            class="fas fa-envelope"></i><span>info@solaceatsundown.com</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solace at Sundown. All rights reserved. | <a href="admin.html"
+                        style="font-size: 0.7rem; opacity: 0.6; text-decoration: underline;">Staff Portal</a></p>
+                <p>Crafted with <i class="fas fa-heart" style="color: var(--color-gold);"></i> in Nepal</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- WhatsApp Concierge -->
+    <a href="https://wa.me/9779742590718?text=Hello%20Solace%20at%20Sundown!%20%F0%9F%8C%BF%20I%20would%20like%20to%20inquire%20about%20a%20stay.%0A%0AName:%20%0ADates:%20%0AGuests:%20%0AMessage:%20"
+        class="whatsapp-float" target="_blank" aria-label="Contact Concierge">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <nav class="mobile-app-nav">
+        <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="services.html" class="app-nav-item"><i class="fas fa-leaf"></i><span>Stays</span></a>
+        <a href="gallery.html" class="app-nav-item"><i class="fas fa-image"></i><span>Gallery</span></a>
+        <a href="packages.html" class="app-nav-item"><i class="fas fa-tag"></i><span>Deals</span></a>
+        <a href="contact.html" class="app-nav-item"><i class="fas fa-calendar-check"></i><span>Book</span></a>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages — Solace at Sundown</title>
+    <meta name="description"
+        content="Choose the perfect package for your luxury nature escape — from solo retreats to family getaways, curated by Solace at Sundown.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skeleton Hero Placeholder -->
+    <div class="skeleton skeleton-hero" id="heroSkeleton"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+            </a>
+            <div class="weather-widget" id="weatherWidget">
+                <i class="fas fa-cloud-sun weather-icon"></i>
+                <span id="weatherInfo">Shivapuri: --°C</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="packages.html" class="nav-link active">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta">Book Now</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="packages.html" class="nav-link active">Packages</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1920&q=85')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content" data-aos="fade-up">
+            <div class="section-label">Curated Stays</div>
+            <h1 class="page-hero-title">Packages & Pricing</h1>
+            <p class="page-hero-subtitle">Choose your ideal escape — from solo retreats to family getaways.</p>
+        </div>
+    </section>
+
+    <!-- Availability Checker -->
+    <div class="booking-bar-wrapper">
+        <div class="container" data-aos="fade-up">
+            <div class="booking-bar">
+                <div class="booking-field">
+                    <label>Check In</label>
+                    <input type="date" id="checkIn">
+                </div>
+                <div class="booking-field">
+                    <label>Check Out</label>
+                    <input type="date" id="checkOut">
+                </div>
+                <div class="booking-field">
+                    <label>Guests</label>
+                    <select id="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4+">4+ Guests</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="checkAvailability()">
+                    Check Availability <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Packages -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">Choose Your Escape</div>
+                <h2 class="section-title">Stay Packages</h2>
+                <p class="section-subtitle">Every package includes nature immersion, camp comfort, and curated
+                    experiences. Prices may vary by season — contact us for the latest rates.</p>
+            </div>
+
+            <div class="packages-table-grid">
+                <!-- Skeleton Pricing Cards -->
+                <div class="package-table-card skeleton-card">
+                    <div class="skeleton skeleton-title"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-img" style="height: 150px; margin-top: 20px;"></div>
+                </div>
+                <div class="package-table-card skeleton-card">
+                    <div class="skeleton skeleton-title"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-img" style="height: 150px; margin-top: 20px;"></div>
+                </div>
+
+                <!-- Actual Packages (Hidden until loaded) -->
+                <!-- Bed, Breakfast & Dinner -->
+                <div class="package-table-card featured" data-aos="fade-up" data-aos-delay="0">
+                    <div class="package-table-badge">MOST POPULAR</div>
+                    <h3 class="package-table-name">Bed, Breakfast & Dinner</h3>
+                    <p class="package-table-desc">Indulge in a complete culinary experience with breakfast and dinner
+                        included, designed for a seamless and relaxing escape.</p>
+
+                    <table class="package-table">
+                        <thead>
+                            <tr>
+                                <th>Guests</th>
+                                <th>Weekend</th>
+                                <th>Weekdays</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2 Guests</td>
+                                <td>Rs. 3,000</td>
+                                <td>Rs. 2,900</td>
+                            </tr>
+                            <tr>
+                                <td>3–5 Guests</td>
+                                <td>Rs. 2,900</td>
+                                <td>Rs. 2,800</td>
+                            </tr>
+                            <tr>
+                                <td>6–8 Guests</td>
+                                <td>Rs. 2,800</td>
+                                <td>Rs. 2,600</td>
+                            </tr>
+                            <tr>
+                                <td>9+ Guests</td>
+                                <td>Rs. 2,600</td>
+                                <td>Rs. 2,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="package-table-note">* Terms & conditions apply.</p>
+                    <a href="contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Book
+                        Now</a>
+                </div>
+
+                <!-- Bed & Breakfast -->
+                <div class="package-table-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="package-table-name" style="color: var(--color-white)">Bed & Breakfast</h3>
+                    <p class="package-table-desc">Start your mornings with a delightful breakfast while enjoying a
+                        peaceful jungle retreat.</p>
+
+                    <table class="package-table">
+                        <thead>
+                            <tr>
+                                <th>Guests</th>
+                                <th>Weekend</th>
+                                <th>Weekdays</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2 Guests</td>
+                                <td>Rs. 2,500</td>
+                                <td>Rs. 2,400</td>
+                            </tr>
+                            <tr>
+                                <td>3–5 Guests</td>
+                                <td>Rs. 2,400</td>
+                                <td>Rs. 2,300</td>
+                            </tr>
+                            <tr>
+                                <td>6–8 Guests</td>
+                                <td>Rs. 2,300</td>
+                                <td>Rs. 2,100</td>
+                            </tr>
+                            <tr>
+                                <td>9+ Guests</td>
+                                <td>Rs. 2,100</td>
+                                <td>Rs. 2,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="package-table-note">* Terms & conditions apply.</p>
+                    <a href="contact.html" class="btn"
+                        style="width: 100%; justify-content: center; background: var(--color-cream); color: var(--color-bg); font-weight: 600; border-radius: 50px;">Book
+                        Now</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--color-cream-muted); margin-top: 48px; font-size: 0.92rem;"
+                data-aos="fade-up">
+                <i class="fas fa-info-circle" style="color: var(--color-gold); margin-right: 6px;"></i>
+                Prices vary by season & group size. Message us for the best package and group discounts.
+            </p>
+        </div>
+    </section>
+
+    <!-- Add-ons -->
+    <section class="section" style="background: var(--color-bg-secondary);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">Enhance Your Stay</div>
+                <h2 class="section-title">Optional Add-ons</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="why-card-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Extra Meal</h3>
+                    <p>Add lunch or dinner to any package — veg and non-veg options available.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-card-icon"><i class="fas fa-camera"></i></div>
+                    <h3>Photo Session</h3>
+                    <p>Professional sunset photography sessions to capture your memories.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-card-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Celebration Setup</h3>
+                    <p>Birthday, anniversary, or proposal decoration with candles and flowers.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="why-card-icon"><i class="fas fa-shuttle-van"></i></div>
+                    <h3>Transport</h3>
+                    <p>Pick-up and drop-off service from Kathmandu city center.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1920&q=80')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="cta-banner-content" data-aos="zoom-in">
+            <h2 class="section-title">Can't Decide? Let Us Help</h2>
+            <p>Tell us your dates, group size, and preferences – we'll craft the perfect package for you.</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                        <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+                    </a>
+                    <p>Nestled in Shivapuri National Park, Solace at Sundown offers immersive nature experiences,
+                        luxurious tents, and peaceful escapes.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="TripAdvisor"><i
+                                class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#sunset">Sunset Camps</a></li>
+                        <li><a href="services.html#garden">Garden Camps</a></li>
+                        <li><a href="services.html#family">Family Retreats</a></li>
+                        <li><a href="services.html#dining">Jungle Dining</a></li>
+                        <li><a href="services.html#bbq">Campfire Evenings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mulkharka, Kathmandu,
+                            Nepal</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+977 9742590718</span></div>
+                    <div class="footer-contact-item"><i
+                            class="fas fa-envelope"></i><span>info@solaceatsundown.com</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solace at Sundown. All rights reserved. | <a href="admin.html"
+                        style="font-size: 0.7rem; opacity: 0.6; text-decoration: underline;">Staff Portal</a></p>
+                <p>Crafted with <i class="fas fa-heart" style="color: var(--color-gold);"></i> in Nepal</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- WhatsApp Concierge -->
+    <a href="https://wa.me/9779742590718?text=Hello%20Solace%20at%20Sundown!%20%F0%9F%8C%BF%20I%20would%20like%20to%20inquire%20about%20a%20stay.%0A%0AName:%20%0ADates:%20%0AGuests:%20%0AMessage:%20"
+        class="whatsapp-float" target="_blank" aria-label="Contact Concierge">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <nav class="mobile-app-nav">
+        <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="services.html" class="app-nav-item"><i class="fas fa-leaf"></i><span>Stays</span></a>
+        <a href="gallery.html" class="app-nav-item"><i class="fas fa-image"></i><span>Gallery</span></a>
+        <a href="packages.html" class="app-nav-item"><i class="fas fa-tag"></i><span>Deals</span></a>
+        <a href="contact.html" class="app-nav-item"><i class="fas fa-calendar-check"></i><span>Book</span></a>
+    </nav>
+</body>
+
+</html>

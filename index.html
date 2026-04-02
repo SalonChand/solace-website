@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solace at Sundown — A Luxury Sunset Resort</title>
+    <meta name="description"
+        content="A quiet luxury retreat nestled in Shivapuri National Park where sunsets slow time and nature restores the soul. Private villas, sunset camps, and curated jungle experiences.">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <!-- Skeleton Hero Placeholder -->
+    <div class="skeleton skeleton-hero" id="heroSkeleton"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+            </a>
+            <div class="weather-widget" id="weatherWidget">
+                <i class="fas fa-cloud-sun weather-icon"></i>
+                <span id="weatherInfo">Shivapuri: 22°C</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta">Book Now</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="hero-slide-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1618767689160-da3fb810aad7?w=1920&q=85')">
+                    </div>
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="hero-label">✦ A Luxury Nature Retreat</div>
+                        <h1 class="hero-title">Solace at <span>Sundown</span></h1>
+                        <p class="hero-desc">A quiet luxury retreat where sunsets slow time and nature restores the
+                            soul. Nestled in the heart of Shivapuri National Park.</p>
+                        <div class="hero-buttons">
+                            <a href="services.html" class="btn btn-primary">Explore Your Stay <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="about.html" class="btn btn-outline">Our Story</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="hero-slide-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1920&q=85')">
+                    </div>
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="hero-label">✦ Luxury Stays Surrounded by Nature</div>
+                        <h1 class="hero-title">Luxury Stays <span>Surrounded</span> by Nature</h1>
+                        <p class="hero-desc">Private villas, garden suites, and sunset-facing rooms designed for
+                            comfort, calm, and unforgettable evenings.</p>
+                        <div class="hero-buttons">
+                            <a href="services.html" class="btn btn-primary">View Accommodations <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="gallery.html" class="btn btn-outline">See Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="hero-slide-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1920&q=85')">
+                    </div>
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="hero-label">✦ Evenings That Stay With You</div>
+                        <h1 class="hero-title">Evenings That <span>Stay</span> With You</h1>
+                        <p class="hero-desc">Golden skies, peaceful nights, and carefully curated experiences that help
+                            you disconnect and breathe again.</p>
+                        <div class="hero-buttons">
+                            <a href="contact.html" class="btn btn-primary">Plan Your Escape <i
+                                    class="fas fa-arrow-right"></i></a>
+                            <a href="packages.html" class="btn btn-outline">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Availability Checker -->
+    <div class="booking-bar-wrapper">
+        <div class="container" data-aos="fade-up">
+            <div class="booking-bar">
+                <div class="booking-field">
+                    <label>Check In</label>
+                    <input type="date" id="checkIn">
+                </div>
+                <div class="booking-field">
+                    <label>Check Out</label>
+                    <input type="date" id="checkOut">
+                </div>
+                <div class="booking-field">
+                    <label>Guests</label>
+                    <select id="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4+">4+ Guests</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="checkAvailability()">
+                    Check Availability <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">Our Stays & Experiences</div>
+                <h2 class="section-title">Immersed in the Heart of Nature</h2>
+                <p class="section-subtitle">Premium stays, curated evenings, and nature-led moments — designed to slow
+                    time and restore the soul.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Skeleton Service Cards -->
+                <div class="service-card skeleton-card">
+                    <div class="skeleton skeleton-img"></div>
+                    <div style="padding: 24px;">
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text short"></div>
+                    </div>
+                </div>
+                <div class="service-card skeleton-card">
+                    <div class="skeleton skeleton-img"></div>
+                    <div style="padding: 24px;">
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text short"></div>
+                    </div>
+                </div>
+                <div class="service-card skeleton-card">
+                    <div class="skeleton skeleton-img"></div>
+                    <div style="padding: 24px;">
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text short"></div>
+                    </div>
+                </div>
+
+                <!-- Actual Services (Hidden until loaded) -->
+                <!-- Service 1 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80"
+                            alt="Sunset View Camps">
+                        <div class="service-card-icon"><i class="fas fa-campground"></i></div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Sunset View Camps</h3>
+                        <p class="service-card-text">Luxury tents placed to capture golden sunsets over forested hills,
+                            offering peace, privacy, and a deep connection with nature.</p>
+                        <a href="services.html#sunset" class="service-card-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1585543805890-6051f7829f98?w=600&q=80"
+                            alt="Garden Camps">
+                        <div class="service-card-icon"><i class="fas fa-leaf"></i></div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Garden Camps</h3>
+                        <p class="service-card-text">Camps surrounded by flowers and greenery, where mornings begin with
+                            birdsong and fresh jungle air.</p>
+                        <a href="services.html#garden" class="service-card-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80"
+                            alt="Family Camp Retreats">
+                        <div class="service-card-icon"><i class="fas fa-users"></i></div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Family Camp Retreats</h3>
+                        <p class="service-card-text">Spacious and secure camping zones designed for families to relax,
+                            reconnect, and share meaningful moments in nature.</p>
+                        <a href="services.html#family" class="service-card-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
+                            alt="Jungle Dining">
+                        <div class="service-card-icon"><i class="fas fa-utensils"></i></div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Glass-View Jungle Dining</h3>
+                        <p class="service-card-text">An aesthetic dining space with panoramic glass views of hills,
+                            forests, and gardens — where every meal feels grounded and serene.</p>
+                        <a href="services.html#dining" class="service-card-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=600&q=80"
+                            alt="BBQ & Campfire">
+                        <div class="service-card-icon"><i class="fas fa-fire"></i></div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">BBQ & Campfire Evenings</h3>
+                        <p class="service-card-text">Evenings shaped by firelight, grilled flavors, storytelling, and
+                            quiet laughter under starlit jungle skies.</p>
+                        <a href="services.html#bbq" class="service-card-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80"
+                            alt="Forest Walks">
+                        <div class="service-card-icon"><i class="fas fa-tree"></i></div>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-card-title">Forest Walks & Quiet Spaces</h3>
+                        <p class="service-card-text">Peaceful walking trails, open garden spaces, and quiet corners
+                            designed for reflection, slow mornings, and mindful evenings.</p>
+                        <a href="services.html#walks" class="service-card-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cinematic Video Hero -->
+    <section class="video-showcase">
+        <div class="video-bg">
+            <video autoplay muted loop playsinline>
+                <source
+                    src="https://assets.mixkit.co/videos/preview/mixkit-forest-covered-in-fog-at-dawn-24691-large.mp4"
+                    type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 0;" data-aos="fade-up">
+                <div class="section-label" style="color: white; opacity: 0.8;">Experience the Atmosphere</div>
+                <h2 class="section-title" style="color: white;">Where Nature Meets Your Soul</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 32px;">A slow-paced cinematic retreat designed to
+                    restore your equilibrium. No rush, no noise — just the sound of the forest.</p>
+                <a href="gallery.html" class="btn btn-primary">Watch Full Film <i class="fas fa-play"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section" style="background: var(--color-bg-secondary);" id="why">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">Why Choose Solace</div>
+                <h2 class="section-title">Why Choose Solace at Sundown</h2>
+                <p class="section-subtitle">Every stay reconnects you with nature while keeping your needs in mind.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="why-card-icon"><i class="fas fa-mountain-sun"></i></div>
+                    <h3>Immersive Nature</h3>
+                    <p>Wake up to birdsong, rustling leaves, and the fresh mountain air — experience the jungle up
+                        close.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-card-icon"><i class="fas fa-bed"></i></div>
+                    <h3>Comfortable Stays</h3>
+                    <p>Luxury tents and camps designed for relaxation, with thoughtful amenities to make you feel at
+                        home.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-card-icon"><i class="fas fa-wine-glass-alt"></i></div>
+                    <h3>Dining & Experiences</h3>
+                    <p>Enjoy aesthetic dining with panoramic jungle views, evening barbecues, and starlit campfires.</p>
+                </div>
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="why-card-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Mindful Escape</h3>
+                    <p>Find quiet corners, walking trails, and open spaces to meditate, reflect, and rejuvenate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="cta-banner-content" data-aos="zoom-in">
+            <h2 class="section-title">Ready for Your Escape?</h2>
+            <p>Book your stay and let the sunset do the rest. Reconnect with nature, yourself, and the people who
+                matter.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary">Book Now <i class="fas fa-arrow-right"></i></a>
+                <a href="packages.html" class="btn btn-outline">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">Our Promise</div>
+                <h2 class="section-title">Our Commitment to Your Experience</h2>
+            </div>
+            <div class="commitment-grid">
+                <div class="commitment-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-number">100%</div>
+                    <h3>Authentic Nature Experience</h3>
+                    <p>Every stay immerses you in the jungle, fresh mountain air, and natural beauty.</p>
+                </div>
+                <div class="commitment-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number">5★</div>
+                    <h3>Comfort & Luxury</h3>
+                    <p>Luxury tents, cozy suites, and thoughtful amenities designed for relaxation in nature.</p>
+                </div>
+                <div class="commitment-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number">∞</div>
+                    <h3>Memorable Experiences</h3>
+                    <p>We aim to create moments you'll cherish — sunset views, starlit nights, and serene escapes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--color-bg-secondary);" id="faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">Common Questions</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Curious about your stay at Solace at Sundown? Here are answers to the most
+                    common questions our guests ask.</p>
+            </div>
+            <div class="faq-list" data-aos="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h4>What types of accommodation do you offer?</h4>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We offer luxury sunset view camps, garden camps, and family camp retreats — all designed for
+                            comfort and immersion in nature. Each stay comes with essential amenities and peaceful
+                            surroundings.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h4>How do I book a stay at Solace at Sundown?</h4>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            You can book directly through our website by visiting the Contact page and filling out the
+                            booking form. Alternatively, reach us at +977 9709137245 or email us for instant
+                            availability.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h4>Is the resort family-friendly?</h4>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Absolutely! We have spacious family camp retreats with safe zones, fun activities, and
+                            comfortable bedding. Kids love the campfire evenings and guided forest walks.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h4>What dining options are available?</h4>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We offer glass-view jungle dining with panoramic views, BBQ & campfire evenings, and
+                            optional meal add-ons for all camp types. Vegetarian and non-vegetarian menus are both
+                            available.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h4>What should I bring for my stay?</h4>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We recommend comfortable clothing, walking shoes, sunscreen, and a camera. We provide all
+                            bedding, towels, and essential toiletries. For forest walks, lightweight layers are ideal.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h4>Is there Wi-Fi available at the resort?</h4>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We encourage a digital detox experience — however, basic Wi-Fi connectivity is available in
+                            common areas for essential needs. Our goal is to help you reconnect with nature, not
+                            screens.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                        <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+                    </a>
+                    <p>Nestled in Shivapuri National Park, Solace at Sundown offers immersive nature experiences,
+                        luxurious tents, and peaceful escapes. Reconnect with the jungle while enjoying comfort and
+                        serenity.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="TripAdvisor"><i
+                                class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="contact.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#sunset">Sunset View Camps</a></li>
+                        <li><a href="services.html#garden">Garden Camps</a></li>
+                        <li><a href="services.html#family">Family Retreats</a></li>
+                        <li><a href="services.html#dining">Jungle Dining</a></li>
+                        <li><a href="services.html#bbq">Campfire Evenings</a></li>
+                        <li><a href="services.html#walks">Forest Walks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mulkharka, Kathmandu, Nepal</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+977 9742590718</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@solaceatsundown.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Check-in: 2:00 PM<br>Check-out: 12:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solace at Sundown. All rights reserved. | <a href="admin.html"
+                        style="font-size: 0.7rem; opacity: 0.6; text-decoration: underline;">Staff Portal</a></p>
+                <p>Crafted with <i class="fas fa-heart" style="color: var(--color-gold);"></i> in Nepal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- WhatsApp Concierge -->
+    <a href="https://wa.me/9779742590718?text=Hello%20Solace%20at%20Sundown!%20%F0%9F%8C%BF%20I%20would%20like%20to%20inquire%20about%20a%20stay.%0A%0AName:%20%0ADates:%20%0AGuests:%20%0AMessage:%20"
+        class="whatsapp-float" target="_blank" aria-label="Contact Concierge">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <nav class="mobile-app-nav">
+        <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="services.html" class="app-nav-item"><i class="fas fa-leaf"></i><span>Stays</span></a>
+        <a href="gallery.html" class="app-nav-item"><i class="fas fa-image"></i><span>Gallery</span></a>
+        <a href="packages.html" class="app-nav-item"><i class="fas fa-tag"></i><span>Deals</span></a>
+        <a href="contact.html" class="app-nav-item"><i class="fas fa-calendar-check"></i><span>Book</span></a>
+    </nav>
+</body>
+
+</html>

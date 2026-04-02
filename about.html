@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Solace at Sundown</title>
+    <meta name="description"
+        content="Discover the story behind Solace at Sundown — a passion for nature, luxury, and creating unforgettable sunset experiences.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skeleton Hero Placeholder -->
+    <div class="skeleton skeleton-hero" id="heroSkeleton"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+            </a>
+            <div class="weather-widget" id="weatherWidget">
+                <i class="fas fa-cloud-sun weather-icon"></i>
+                <span id="weatherInfo">Shivapuri: --°C</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta">Book Now</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=85')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content" data-aos="fade-up">
+            <div class="section-label">Our Story</div>
+            <h1 class="page-hero-title">About Solace at Sundown</h1>
+            <p class="page-hero-subtitle">Where nature meets luxury and every sunset tells a story.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="about-story">
+                <div class="about-story-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=80"
+                        alt="Solace at Sundown story">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <div class="section-label" style="text-align: left; padding-left: 0;">Our Beginning</div>
+                    <h2>Born From a Love of Sunsets</h2>
+                    <p>Solace at Sundown was born from a simple yet profound belief — that every person deserves a place
+                        where the pace of life slows down, where the air is clean, and where the evening sky paints
+                        peace across the heart.</p>
+                    <p>Nestled at the edge of Shivapuri National Park in Kathmandu, our retreat was created to offer
+                        more than just a stay. It's an invitation to reconnect — with nature, with stillness, and with
+                        the people who matter most.</p>
+                    <p>Every detail, from the placement of our sunset-facing camps to the curated campfire evenings, is
+                        designed to help you step away from the noise and into something meaningful.</p>
+                    <a href="services.html" class="btn btn-ghost">Explore Our Stays <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="container">
+        <div class="separator"><i class="fas fa-sun"></i></div>
+    </div>
+
+    <!-- Values -->
+    <section class="section" style="background: var(--color-bg-secondary);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-label">What We Believe</div>
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">Everything we do is guided by a deep respect for nature, a commitment to
+                    comfort, and a passion for creating lasting memories.</p>
+            </div>
+            <div class="about-values-grid">
+                <div class="about-value-card" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Nature First</h4>
+                    <p>We operate with deep respect for the environment, ensuring our presence uplifts rather than
+                        disrupts the natural ecosystem.</p>
+                </div>
+                <div class="about-value-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-heart"></i>
+                    <h4>Genuine Hospitality</h4>
+                    <p>Every guest is treated like family. We listen, we care, and we go above and beyond to make your
+                        stay unforgettable.</p>
+                </div>
+                <div class="about-value-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-gem"></i>
+                    <h4>Quiet Luxury</h4>
+                    <p>Luxury isn't loud — it's in the details. From premium linens to candlelit dinners, we elevate
+                        every moment with quiet sophistication.</p>
+                </div>
+                <div class="about-value-card" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Community</h4>
+                    <p>We support local communities, source ingredients locally, and employ talented individuals from
+                        the surrounding villages.</p>
+                </div>
+                <div class="about-value-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Sustainability</h4>
+                    <p>From solar energy to waste reduction, sustainability is woven into every decision we make at
+                        Solace at Sundown.</p>
+                </div>
+                <div class="about-value-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-peace"></i>
+                    <h4>Mindful Living</h4>
+                    <p>We create spaces for reflection, digital detox, and conscious living — encouraging every guest to
+                        slow down and breathe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1920&q=80')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="cta-banner-content" data-aos="zoom-in">
+            <h2 class="section-title">Come Experience the Magic</h2>
+            <p>Let the forest, the sunset, and the stillness restore what the world has taken. Your escape awaits.</p>
+            <a href="contact.html" class="btn btn-primary">Book Your Stay <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                        <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+                    </a>
+                    <p>Nestled in Shivapuri National Park, Solace at Sundown offers immersive nature experiences,
+                        luxurious tents, and peaceful escapes.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="TripAdvisor"><i
+                                class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#sunset">Sunset Camps</a></li>
+                        <li><a href="services.html#garden">Garden Camps</a></li>
+                        <li><a href="services.html#family">Family Retreats</a></li>
+                        <li><a href="services.html#dining">Jungle Dining</a></li>
+                        <li><a href="services.html#bbq">Campfire Evenings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mulkharka, Kathmandu,
+                            Nepal</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+977 9742590718</span></div>
+                    <div class="footer-contact-item"><i
+                            class="fas fa-envelope"></i><span>info@solaceatsundown.com</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solace at Sundown. All rights reserved. | <a href="admin.html"
+                        style="font-size: 0.7rem; opacity: 0.6; text-decoration: underline;">Staff Portal</a></p>
+                <p>Crafted with <i class="fas fa-heart" style="color: var(--color-gold);"></i> in Nepal</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- WhatsApp Concierge -->
+    <a href="https://wa.me/9779742590718?text=Hello%20Solace%20at%20Sundown!%20%F0%9F%8C%BF%20I%20would%20like%20to%20inquire%20about%20a%20stay.%0A%0AName:%20%0ADates:%20%0AGuests:%20%0AMessage:%20"
+        class="whatsapp-float" target="_blank" aria-label="Contact Concierge">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <nav class="mobile-app-nav">
+        <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="services.html" class="app-nav-item"><i class="fas fa-leaf"></i><span>Stays</span></a>
+        <a href="gallery.html" class="app-nav-item"><i class="fas fa-image"></i><span>Gallery</span></a>
+        <a href="packages.html" class="app-nav-item"><i class="fas fa-tag"></i><span>Deals</span></a>
+        <a href="contact.html" class="app-nav-item"><i class="fas fa-calendar-check"></i><span>Book</span></a>
+    </nav>
+</body>
+
+</html>

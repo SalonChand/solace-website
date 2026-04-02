@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — Solace at Sundown</title>
+    <meta name="description"
+        content="Explore our luxury stays and curated nature experiences — sunset camps, garden retreats, jungle dining, campfire evenings, and peaceful forest walks.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skeleton Hero Placeholder -->
+    <div class="skeleton skeleton-hero" id="heroSkeleton"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+            </a>
+            <div class="weather-widget" id="weatherWidget">
+                <i class="fas fa-cloud-sun weather-icon"></i>
+                <span id="weatherInfo">Shivapuri: --°C</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta">Book Now</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="packages.html" class="nav-link">Packages</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=1920&q=85')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content" data-aos="fade-up">
+            <div class="section-label">Our Stays & Experiences</div>
+            <h1 class="page-hero-title">Services & Experiences</h1>
+            <p class="page-hero-subtitle">Premium stays, curated evenings, and nature-led moments — designed to slow
+                time and restore the soul.</p>
+        </div>
+    </section>
+
+    <!-- Services Quick Nav -->
+    <section class="section" style="padding-top: 60px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="gallery-filters" data-aos="fade-up">
+                <a href="#sunset" class="filter-btn active">🌄 Sunset Camps</a>
+                <a href="#garden" class="filter-btn">🌿 Garden Camps</a>
+                <a href="#family" class="filter-btn">👨‍👩‍👧‍👦 Family Retreats</a>
+                <a href="#dining" class="filter-btn">🍽️ Jungle Dining</a>
+                <a href="#bbq" class="filter-btn">🔥 Campfire Evenings</a>
+                <a href="#walks" class="filter-btn">🚶 Forest Walks</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sunset View Camps -->
+    <section class="section" id="sunset">
+        <div class="container">
+            <div class="service-detail" data-aos="fade-up">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80"
+                        alt="Sunset View Camps">
+                </div>
+                <div class="service-detail-content">
+                    <div class="section-label" style="text-align: left; padding-left: 0;">Most Popular</div>
+                    <h3>Sunset View Camps</h3>
+                    <p>Our most loved camp category — designed to capture golden sunsets and quiet luxury. Perfect for
+                        couples, creators, and anyone craving stillness.</p>
+                    <ul class="service-features">
+                        <li>Welcome tea on arrival (seasonal)</li>
+                        <li>Seating area with panoramic sunset view</li>
+                        <li>Evening bonfire (weather permitting)</li>
+                        <li>Staff support for comfort & safety</li>
+                    </ul>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Book This Stay</a>
+                        <a href="contact.html" class="btn btn-outline">Ask for Price</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garden Camps -->
+    <section class="section" style="background: var(--color-bg-secondary);" id="garden">
+        <div class="container">
+            <div class="service-detail" data-aos="fade-up">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1585543805890-6051f7829f98?w=800&q=80"
+                        alt="Garden Camps">
+                </div>
+                <div class="service-detail-content">
+                    <div class="section-label" style="text-align: left; padding-left: 0;">Peaceful & Green</div>
+                    <h3>Garden Camps</h3>
+                    <p>Wake up to birdsong and garden freshness — a gentle stay style for slow mornings and peaceful
+                        evenings.</p>
+                    <ul class="service-features">
+                        <li>Garden-side seating area</li>
+                        <li>Comfortable sleeping setup</li>
+                        <li>Evening ambiance lighting</li>
+                        <li>Optional meals on request</li>
+                    </ul>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Book Garden Camp</a>
+                        <a href="contact.html" class="btn btn-outline">Ask for Price</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Retreats -->
+    <section class="section" id="family">
+        <div class="container">
+            <div class="service-detail" data-aos="fade-up">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"
+                        alt="Family Camp Retreats">
+                </div>
+                <div class="service-detail-content">
+                    <div class="section-label" style="text-align: left; padding-left: 0;">For Families</div>
+                    <h3>Family Camp Retreats</h3>
+                    <p>Spacious and secure zones for families — relax, reconnect, and enjoy a safe outdoor experience
+                        together.</p>
+                    <ul class="service-features">
+                        <li>Spacious camp layout</li>
+                        <li>Comfortable bedding arrangement</li>
+                        <li>Optional BBQ or dinner add-on</li>
+                        <li>Staff guidance and safety support</li>
+                    </ul>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Book Family Retreat</a>
+                        <a href="contact.html" class="btn btn-outline">Ask for Group Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jungle Dining -->
+    <section class="section" style="background: var(--color-bg-secondary);" id="dining">
+        <div class="container">
+            <div class="service-detail" data-aos="fade-up">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                        alt="Glass-View Jungle Dining">
+                </div>
+                <div class="service-detail-content">
+                    <div class="section-label" style="text-align: left; padding-left: 0;">Fine Dining</div>
+                    <h3>Glass-View Jungle Dining</h3>
+                    <p>Panoramic dining with a jungle backdrop — ideal for dates, celebrations, and calm scenic meals.
+                    </p>
+                    <ul class="service-features">
+                        <li>Seating with panoramic views</li>
+                        <li>Menu options (veg / non-veg)</li>
+                        <li>Optional candlelight setup</li>
+                        <li>Reservation support</li>
+                    </ul>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Reserve Dining</a>
+                        <a href="contact.html" class="btn btn-outline">Ask for Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BBQ & Campfire -->
+    <section class="section" id="bbq">
+        <div class="container">
+            <div class="service-detail" data-aos="fade-up">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80"
+                        alt="BBQ & Campfire Evenings">
+                </div>
+                <div class="service-detail-content">
+                    <div class="section-label" style="text-align: left; padding-left: 0;">Signature Experience</div>
+                    <h3>BBQ & Campfire Evenings</h3>
+                    <p>A signature evening package — firelight, grilled flavors, and stories under the stars.</p>
+                    <ul class="service-features">
+                        <li>BBQ corner arrangement</li>
+                        <li>Campfire area (weather permitting)</li>
+                        <li>Seating + ambient lights</li>
+                        <li>Optional music setup</li>
+                    </ul>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Reserve Evening</a>
+                        <a href="contact.html" class="btn btn-outline">Ask for Price</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forest Walks -->
+    <section class="section" style="background: var(--color-bg-secondary);" id="walks">
+        <div class="container">
+            <div class="service-detail" data-aos="fade-up">
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80"
+                        alt="Forest Walks & Quiet Spaces">
+                </div>
+                <div class="service-detail-content">
+                    <div class="section-label" style="text-align: left; padding-left: 0;">Mindful Trails</div>
+                    <h3>Forest Walks & Quiet Spaces</h3>
+                    <p>Guided or self-paced walks, quiet seating corners, and slow spaces — ideal for reflection and
+                        digital detox.</p>
+                    <ul class="service-features">
+                        <li>Access to walking paths</li>
+                        <li>Quiet seating corners</li>
+                        <li>Optional guided trail (on request)</li>
+                        <li>Safety support & directions</li>
+                    </ul>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">Plan a Walk</a>
+                        <a href="contact.html" class="btn btn-outline">Ask for Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Note -->
+    <section class="cta-banner">
+        <div class="cta-banner-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="cta-banner-content" data-aos="zoom-in">
+            <h2 class="section-title">Find Your Perfect Stay</h2>
+            <p>Prices vary by season & group size. Message us for the best package tailored to your needs.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary">Book / Ask Availability <i
+                        class="fas fa-arrow-right"></i></a>
+                <a href="packages.html" class="btn btn-outline">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon"><i class="fas fa-sun"></i></div>
+                        <div class="nav-logo-text">Solace <span>at Sundown</span></div>
+                    </a>
+                    <p>Nestled in Shivapuri National Park, Solace at Sundown offers immersive nature experiences,
+                        luxurious tents, and peaceful escapes.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link" aria-label="TripAdvisor"><i
+                                class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Experiences</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sunset">Sunset Camps</a></li>
+                        <li><a href="#garden">Garden Camps</a></li>
+                        <li><a href="#family">Family Retreats</a></li>
+                        <li><a href="#dining">Jungle Dining</a></li>
+                        <li><a href="#bbq">Campfire Evenings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mulkharka, Kathmandu,
+                            Nepal</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+977 9742590718</span></div>
+                    <div class="footer-contact-item"><i
+                            class="fas fa-envelope"></i><span>info@solaceatsundown.com</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solace at Sundown. All rights reserved. | <a href="admin.html"
+                        style="font-size: 0.7rem; opacity: 0.6; text-decoration: underline;">Staff Portal</a></p>
+                <p>Crafted with <i class="fas fa-heart" style="color: var(--color-gold);"></i> in Nepal</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- WhatsApp Concierge -->
+    <a href="https://wa.me/9779742590718?text=Hello%20Solace%20at%20Sundown!%20%F0%9F%8C%BF%20I%20would%20like%20to%20inquire%20about%20a%20stay.%0A%0AName:%20%0ADates:%20%0AGuests:%20%0AMessage:%20"
+        class="whatsapp-float" target="_blank" aria-label="Contact Concierge">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <nav class="mobile-app-nav">
+        <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="services.html" class="app-nav-item"><i class="fas fa-leaf"></i><span>Stays</span></a>
+        <a href="gallery.html" class="app-nav-item"><i class="fas fa-image"></i><span>Gallery</span></a>
+        <a href="packages.html" class="app-nav-item"><i class="fas fa-tag"></i><span>Deals</span></a>
+        <a href="contact.html" class="app-nav-item"><i class="fas fa-calendar-check"></i><span>Book</span></a>
+    </nav>
+</body>
+
+</html>
