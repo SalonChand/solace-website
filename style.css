@@ -743,19 +743,19 @@ h6 {
 
 .service-card-icon {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 44px;
-    height: 44px;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(201, 169, 110, 0.9);
+    background: rgba(201, 169, 110, 0.88);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--color-bg);
     z-index: 2;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .service-card-body {
@@ -1699,7 +1699,7 @@ h6 {
     justify-content: center;
     font-size: 1.1rem;
     cursor: pointer;
-    z-index: 100;
+    z-index: 1500;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -1990,8 +1990,8 @@ h6 {
         flex-direction: column;
         gap: 12px;
         text-align: center;
-        padding-bottom: 100px;
-        /* Space for mobile app nav */
+        padding-bottom: 20px;
+        /* Space for mobile app nav — body already handles it */
     }
 
     .form-row {
