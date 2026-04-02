@@ -706,54 +706,5 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.reload();
     };
 
-    // --- BOOKING CAPTURE ENGINE ---
-    const setupBookingCapture = () => {
-        const contactForm = document.querySelector('.contact-form form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const formData = new FormData(contactForm);
-                const booking = {
-                    id: 'BK-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
-                    timestamp: new Date().toLocaleString(),
-                    name: formData.get('name') || formData.get('first-name') + ' ' + formData.get('last-name'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    guests: formData.get('guests') || '2',
-                    dates: formData.get('dates') || 'TBD',
-                    message: formData.get('message'),
-                    status: 'New'
-                };
-
-                let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-                bookings.push(booking);
-                localStorage.setItem('bookings', JSON.stringify(bookings));
-
-                alert('Thank you! Your inquiry has been sent to our concierge.');
-                contactForm.reset();
-            });
-        }
-
-        // Intercept Availability Checker (Simple)
-        const availBtn = document.querySelector('.check-btn');
-        if (availBtn) {
-            availBtn.addEventListener('click', () => {
-                const checkIn = document.querySelector('input[placeholder="Check-in"]').value;
-                if (checkIn) {
-                    let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-                    bookings.push({
-                        id: 'INQ-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
-                        timestamp: new Date().toLocaleString(),
-                        name: 'Web Visitor (Quick Inquiry)',
-                        dates: checkIn,
-                        status: 'Interested'
-                    });
-                    localStorage.setItem('bookings', JSON.stringify(bookings));
-                }
-            });
-        }
-    };
-
-    setupBookingCapture();
 
 });
