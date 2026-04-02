@@ -242,7 +242,8 @@
 
             .main-content {
                 margin-left: 0 !important;
-                padding: 70px 16px 24px;
+                padding: 70px 16px 40px;
+                min-height: 100vh;
             }
 
             .stats-grid {
@@ -299,6 +300,21 @@
                 color: var(--color-gold);
                 margin-right: 12px;
                 white-space: nowrap;
+            }
+
+            /* Empty state row — don't card-ify it */
+            .data-table tr.empty-row {
+                background: transparent;
+                border: none;
+            }
+
+            .data-table tr.empty-row td {
+                border: none;
+                display: flex;
+            }
+
+            .data-table tr.empty-row td::before {
+                display: none;
             }
 
             /* Availability calendar — 3 cols on mobile */
@@ -613,9 +629,12 @@
 
             // Handle Empty
             if (bookings.length === 0) {
-                const empty = `<tr><td colspan="6" style="text-align:center; padding: 40px; color: var(--color-cream-muted);">No live inquiries yet.</td></tr>`;
+                const empty = `<tr class="empty-row"><td colspan="6" data-label="" style="text-align:center; padding: 48px 20px; color: var(--color-cream-muted); justify-content:center; flex-direction:column; gap:12px;">
+                    <i class="fas fa-calendar-times" style="font-size:2rem; color:var(--color-gold); opacity:0.4; margin-bottom:8px; display:block;"></i>
+                    No live inquiries yet.
+                </td></tr>`;
                 tableBody.innerHTML = empty;
-                overviewBody.innerHTML = `<tr><td colspan="3" style="text-align:center;">No recent activity.</td></tr>`;
+                overviewBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding: 30px; color: var(--color-cream-muted);">No recent activity.</td></tr>`;
             } else {
                 bookings.reverse().forEach(b => {
                     const row = `
