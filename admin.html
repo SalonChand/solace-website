@@ -427,6 +427,65 @@
             const colors = { new:'status-new', contacted:'status-contacted', confirmed:'status-confirmed', declined:'status-declined' };
             el.className = 'status-pill ' + (colors[val]||'status-new');
             loadDashboardData();
+
+            if (val !== 'confirmed' && val !== 'declined') return;
+
+            const b = bookings.find(x => x.id === id);
+            if (!b) return;
+
+            const phone = (b.phone || '').replace(/[\s\-\(\)]/g, '');
+            if (!phone) { showToast('⚠️ No phone number — WhatsApp not sent.'); return; }
+
+            let msg = '';
+            if (val === 'confirmed') {
+                msg =
+`🌿 *Solace at Sundown* — Booking Confirmed! ✅
+
+Dear *${b.name || 'Valued Guest'}*,
+
+We're delighted to confirm your reservation with us. Here are your details:
+
+━━━━━━━━━━━━━━━━━━━
+📅 *Dates:* ${b.dates || '—'}
+👥 *Guests:* ${b.guests || '—'}
+🏕️ *Package:* ${b.package || 'Standard Stay'}
+━━━━━━━━━━━━━━━━━━━
+
+📍 *Location:* Mulkharka, Shivapuri National Park, Kathmandu
+⏰ *Check-in:* 2:00 PM  |  *Check-out:* 12:00 PM
+
+We look forward to welcoming you to the forest. Please feel free to reach us anytime for special requests or directions. 🌄
+
+_Warm regards,_
+*The Solace at Sundown Team*
+📞 +977 9742590718`;
+
+            } else if (val === 'declined') {
+                msg =
+`🌿 *Solace at Sundown* — Booking Update
+
+Dear *${b.name || 'Valued Guest'}*,
+
+Thank you so much for choosing Solace at Sundown. 🙏
+
+We regret to inform you that we are unable to accommodate your request for the following dates:
+
+━━━━━━━━━━━━━━━━━━━
+📅 *Dates:* ${b.dates || '—'}
+👥 *Guests:* ${b.guests || '—'}
+━━━━━━━━━━━━━━━━━━━
+
+We sincerely apologize for the inconvenience. Our availability may be limited during your selected period.
+
+We would love to host you at another time — please don't hesitate to reach out and we'll do our very best to find a perfect arrangement for you. 💚
+
+_Warm regards,_
+*The Solace at Sundown Team*
+📞 +977 9742590718`;
+            }
+
+            window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(msg), '_blank');
+            showToast(val === 'confirmed' ? '✅ Confirmation sent via WhatsApp!' : '📩 Decline message sent via WhatsApp!');
         }
 
         function viewBooking(id) {
