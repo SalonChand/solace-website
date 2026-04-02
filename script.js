@@ -296,13 +296,42 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
 
+            // Collect form data
+            const firstName = document.getElementById('firstName')?.value || '';
+            const lastName  = document.getElementById('lastName')?.value  || '';
+            const email     = document.getElementById('email')?.value     || '';
+            const phone     = document.getElementById('phone')?.value     || '';
+            const checkin   = document.getElementById('checkin')?.value   || '';
+            const checkout  = document.getElementById('checkout')?.value  || '';
+            const guests    = document.getElementById('guests')?.value    || '';
+            const pkg       = document.getElementById('package')?.value   || '';
+            const message   = document.getElementById('message')?.value   || '';
+
+            // Build booking object
+            const booking = {
+                id: 'bk_' + Date.now(),
+                name: `${firstName} ${lastName}`.trim(),
+                email,
+                phone,
+                dates: checkin && checkout ? `${checkin} → ${checkout}` : checkin || '—',
+                guests,
+                package: pkg,
+                message,
+                timestamp: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                status: 'new'
+            };
+
+            // Save to localStorage
+            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+            bookings.push(booking);
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
 
-            // Simulate form submission
             setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Inquiry Sent!';
                 submitBtn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
 
                 setTimeout(() => {
