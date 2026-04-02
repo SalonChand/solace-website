@@ -433,8 +433,21 @@
             const b = bookings.find(x => x.id === id);
             if (!b) return;
 
-            const phone = (b.phone || '').replace(/[\s\-\(\)]/g, '');
-            if (!phone) { showToast('⚠️ No phone number — WhatsApp not sent.'); return; }
+            const phone = (b.phone || '').replace(/[\s\-\(\)\+]/g, '');
+            if (!phone) {
+                showToast('⚠️ No phone number on file — WhatsApp not sent.');
+                // If email exists, offer to open mail client instead
+                if (b.email && (val === 'confirmed' || val === 'declined')) {
+                    const subject = val === 'confirmed'
+                        ? 'Your Booking at Solace at Sundown is Confirmed!'
+                        : 'Update on Your Booking Request — Solace at Sundown';
+                    const body = val === 'confirmed'
+                        ? `Dear ${b.name},\n\nWe are delighted to confirm your reservation.\n\nDates: ${b.dates}\nGuests: ${b.guests}\nPackage: ${b.package || 'Standard Stay'}\n\nCheck-in: 2:00 PM | Check-out: 12:00 PM\nLocation: Mulkharka, Shivapuri National Park, Kathmandu\n\nWe look forward to welcoming you!\n\nWarm regards,\nSolace at Sundown Team\n+977 9742590718`
+                        : `Dear ${b.name},\n\nThank you for your interest in Solace at Sundown.\n\nUnfortunately we are unable to accommodate your request for ${b.dates}. We sincerely apologize for the inconvenience and hope to host you another time.\n\nWarm regards,\nSolace at Sundown Team\n+977 9742590718`;
+                    window.open(`mailto:${b.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+                }
+                return;
+            }
 
             let msg = '';
             if (val === 'confirmed') {
