@@ -165,7 +165,7 @@
                         <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="mailto:info@solaceatsundown.com">info@solaceatsundown.com</a></p>
+                            <p><a href="/cdn-cgi/l/email-protection#f69f989099b685999a979593978285839892998198d895999b"><span class="__cf_email__" data-cfemail="1f767179705f6c70737e7c7a7e6b6c6a717b706871317c7072">[email&#160;protected]</span></a></p>
                             <p style="font-size: 0.82rem;">We respond within 24 hours</p>
                         </div>
                     </div>
@@ -237,7 +237,7 @@
                             Nepal</span></div>
                     <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+977 9742590718</span></div>
                     <div class="footer-contact-item"><i
-                            class="fas fa-envelope"></i><span>info@solaceatsundown.com</span></div>
+                            class="fas fa-envelope"></i><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbd2d5ddd4fbc8d4d7dad8dedacfc8ced5dfd4ccd595d8d4d6">[email&#160;protected]</a></span></div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -256,16 +256,61 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Booking capture — runs after script.js, clears any duplicate handlers
+        (function () {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            // Clone to wipe existing listeners
+            const fresh = form.cloneNode(true);
+            form.parentNode.replaceChild(fresh, form);
+
+            fresh.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const btn = fresh.querySelector('button[type="submit"]');
+                const original = btn.innerHTML;
+
+                const checkin  = document.getElementById('checkin').value;
+                const checkout = document.getElementById('checkout').value;
+
+                const booking = {
+                    id: 'bk_' + Date.now(),
+                    timestamp: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                    name: (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim(),
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    dates: checkin && checkout ? checkin + ' → ' + checkout : checkin || '—',
+                    guests: document.getElementById('guests').value,
+                    package: document.getElementById('package').value,
+                    message: document.getElementById('message').value,
+                    status: 'new'
+                };
+
+                const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                bookings.push(booking);
+                localStorage.setItem('bookings', JSON.stringify(bookings));
+
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Inquiry Sent!';
+                    btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+                    setTimeout(() => {
+                        btn.innerHTML = original;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        fresh.reset();
+                    }, 3000);
+                }, 1000);
+            });
+        })();
+    </script>
     <nav class="mobile-app-nav">
         <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="services.html" class="app-nav-item"><i class="fas fa-leaf"></i><span>Stays</span></a>
-        <a href="gallery.html" class="app-nav-item"><i class="fas fa-image"></i><span>Gallery</span></a>
-        <a href="packages.html" class="app-nav-item"><i class="fas fa-tag"></i><span>Deals</span></a>
-        <a href="contact.html" class="app-nav-item"><i class="fas fa-calendar-check"></i><span>Book</span></a>
-    </nav>
-</body>
-
-</html>
+        <a href="services.html" class="app-nav-item"><i class="fas fa-leaf"

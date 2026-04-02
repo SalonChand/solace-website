@@ -578,6 +578,14 @@
             document.getElementById('loginOverlay').style.display = 'none';
             document.getElementById('mainLayout').style.display = 'flex';
             loadDashboardData();
+
+            // Auto-refresh every 30 seconds
+            setInterval(loadDashboardData, 30000);
+
+            // Instant refresh when another tab saves a booking
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'bookings') loadDashboardData();
+            });
         }
 
         function handleLogin() {
