@@ -217,29 +217,20 @@
             transition: all 0.3s ease;
         }
 
-        .sidebar-toggle:hover {
-            background: rgba(247, 231, 206, 0.1);
-        }
-
-        /* --- SIDEBAR OVERLAY (mobile backdrop) --- */
         .sidebar-backdrop {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0,0,0,0.6);
             z-index: 99;
             backdrop-filter: blur(2px);
         }
 
-        .sidebar-backdrop.active {
-            display: block;
-        }
+        .sidebar-backdrop.active { display: block; }
 
-        /* --- RESPONSIVE --- */
+        /* --- RESPONSIVE TABLE (mobile card layout) --- */
         @media (max-width: 768px) {
-            .sidebar-toggle {
-                display: flex;
-            }
+            .sidebar-toggle { display: flex; }
 
             .sidebar {
                 transform: translateX(-100%);
@@ -247,13 +238,11 @@
                 z-index: 150;
             }
 
-            .sidebar.mobile-open {
-                transform: translateX(0);
-            }
+            .sidebar.mobile-open { transform: translateX(0); }
 
             .main-content {
                 margin-left: 0 !important;
-                padding: 70px 20px 24px;
+                padding: 70px 16px 24px;
             }
 
             .stats-grid {
@@ -268,32 +257,68 @@
             .page-header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 12px;
-                margin-bottom: 24px;
+                gap: 8px;
+                margin-bottom: 20px;
             }
 
-            .page-title h1 {
-                font-size: 1.3rem;
+            .page-title h1 { font-size: 1.3rem; }
+
+            /* Stack table rows as cards on mobile */
+            .data-table thead { display: none; }
+
+            .data-table,
+            .data-table tbody,
+            .data-table tr,
+            .data-table td { display: block; width: 100%; }
+
+            .data-table tr {
+                background: rgba(247,231,206,0.04);
+                border: 1px solid rgba(247,231,206,0.08);
+                border-radius: 10px;
+                margin-bottom: 12px;
+                padding: 4px 0;
             }
 
-            .data-table {
-                font-size: 0.8rem;
-            }
-
-            .data-table th,
             .data-table td {
-                padding: 10px 8px;
+                padding: 8px 16px;
+                border-bottom: 1px solid rgba(247,231,206,0.05);
+                font-size: 0.85rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .data-table td:last-child { border-bottom: none; }
+
+            .data-table td::before {
+                content: attr(data-label);
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: var(--color-gold);
+                margin-right: 12px;
+                white-space: nowrap;
+            }
+
+            /* Availability calendar — 3 cols on mobile */
+            .avail-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
+            }
+
+            .avail-day-label {
+                display: none;
+            }
+
+            .avail-cell {
+                padding: 10px 4px !important;
+                font-size: 0.75rem !important;
             }
         }
 
         @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr !important;
-            }
-
-            .main-content {
-                padding: 70px 16px 24px;
-            }
+            .stats-grid { grid-template-columns: 1fr !important; }
         }
 
         /* --- LOGIN OVERLAY --- */
@@ -356,14 +381,10 @@
 
     <!-- Main Dashboard Layout -->
     <div class="admin-layout" id="mainLayout" style="display: none;">
-        <!-- Mobile sidebar toggle button -->
         <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle menu" onclick="toggleSidebar()">
             <i class="fas fa-bars" id="sidebarToggleIcon"></i>
         </button>
-
-        <!-- Mobile backdrop -->
         <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeSidebar()"></div>
-
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <a href="index.html" class="nav-logo">
@@ -512,17 +533,17 @@
                     <p style="margin-bottom: 24px; color: var(--color-cream-muted);">Select dates to mark as **Fully
                         Booked** on the website.</p>
                     <!-- Simple Mock Availability Grid -->
-                    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center;">
-                        <div style="font-size: 0.7rem; color: var(--color-gold);">SUN</div>
-                        <div style="font-size: 0.7rem; color: var(--color-gold);">MON</div>
-                        <div style="font-size: 0.7rem; color: var(--color-gold);">TUE</div>
-                        <div style="font-size: 0.7rem; color: var(--color-gold);">WED</div>
-                        <div style="font-size: 0.7rem; color: var(--color-gold);">THU</div>
-                        <div style="font-size: 0.7rem; color: var(--color-gold);">FRI</div>
-                        <div style="font-size: 0.7rem; color: var(--color-gold);">SAT</div>
+                    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center;" class="avail-grid">
+                        <div style="font-size: 0.7rem; color: var(--color-gold);" class="avail-day-label">SUN</div>
+                        <div style="font-size: 0.7rem; color: var(--color-gold);" class="avail-day-label">MON</div>
+                        <div style="font-size: 0.7rem; color: var(--color-gold);" class="avail-day-label">TUE</div>
+                        <div style="font-size: 0.7rem; color: var(--color-gold);" class="avail-day-label">WED</div>
+                        <div style="font-size: 0.7rem; color: var(--color-gold);" class="avail-day-label">THU</div>
+                        <div style="font-size: 0.7rem; color: var(--color-gold);" class="avail-day-label">FRI</div>
+                        <div style="font-size: 0.7rem; color: var(--color-gold);" class="avail-day-label">SAT</div>
                         <script>
                             for (let i = 1; i <= 30; i++) {
-                                document.write(`<div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:8px; cursor:pointer;" onclick="this.style.background='#ff9999'">APR ${i}</div>`);
+                                document.write(`<div class="avail-cell" style="background:rgba(255,255,255,0.05); padding:15px; border-radius:8px; cursor:pointer;" onclick="this.style.background=this.style.background==='rgb(255, 153, 153)'?'rgba(255,255,255,0.05)':'#ff9999'">APR ${i}</div>`);
                             }
                         </script>
                     </div>
@@ -577,14 +598,9 @@
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
-
-            // Close sidebar on mobile after tab selection
-            if (window.innerWidth <= 768) {
-                closeSidebar();
-            }
+            if (window.innerWidth <= 768) closeSidebar();
         }
 
         function loadDashboardData() {
@@ -604,12 +620,12 @@
                 bookings.reverse().forEach(b => {
                     const row = `
                         <tr>
-                            <td>${b.timestamp || 'Today'}</td>
-                            <td><strong>${b.name}</strong></td>
-                            <td>${b.email || b.phone || 'N/A'}</td>
-                            <td>${b.guests || '2'}</td>
-                            <td>${b.dates || 'Apr 10-12'}</td>
-                            <td><button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.6rem;" onclick="deleteBooking('${b.id}')">Archive</button></td>
+                            <td data-label="Date">${b.timestamp || 'Today'}</td>
+                            <td data-label="Guest"><strong>${b.name}</strong></td>
+                            <td data-label="Contact">${b.email || b.phone || 'N/A'}</td>
+                            <td data-label="Guests">${b.guests || '2'}</td>
+                            <td data-label="Dates">${b.dates || 'Apr 10-12'}</td>
+                            <td data-label="Action"><button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.6rem;" onclick="deleteBooking('${b.id}')">Archive</button></td>
                         </tr>
                     `;
                     tableBody.innerHTML += row;
