@@ -260,19 +260,16 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     <script>
-        // Booking capture — runs after script.js, clears any duplicate handlers
-        (function () {
+        // Runs before script.js DOMContentLoaded — captures form submit reliably
+        window.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('contactForm');
             if (!form) return;
 
-            // Clone to wipe existing listeners
-            const fresh = form.cloneNode(true);
-            form.parentNode.replaceChild(fresh, form);
-
-            fresh.addEventListener('submit', function (e) {
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
+                e.stopImmediatePropagation(); // block any other handlers
 
-                const btn = fresh.querySelector('button[type="submit"]');
+                const btn = form.querySelector('button[type="submit"]');
                 const original = btn.innerHTML;
 
                 const checkin  = document.getElementById('checkin').value;
@@ -291,10 +288,14 @@
                     status: 'new'
                 };
 
-                const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-                bookings.push(booking);
-                localStorage.setItem('bookings', JSON.stringify(bookings));
+                // Save immediately
+                try {
+                    const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                    bookings.push(booking);
+                    localStorage.setItem('bookings', JSON.stringify(bookings));
+                } catch(err) { console.error('Save failed:', err); }
 
+                // UI feedback
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 btn.disabled = true;
 
@@ -305,11 +306,12 @@
                         btn.innerHTML = original;
                         btn.style.background = '';
                         btn.disabled = false;
-                        fresh.reset();
+                        form.reset();
                     }, 3000);
                 }, 1000);
-            });
-        })();
+
+            }, true); // ← capture phase: fires BEFORE script.js bubble-phase handlers
+        });
     </script>
     <nav class="mobile-app-nav">
         <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
