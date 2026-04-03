@@ -260,29 +260,31 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     <script>
-        // Runs before script.js DOMContentLoaded — captures form submit reliably
-        window.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('contactForm');
-            if (!form) return;
+        (function () {
+            var form = document.getElementById('contactForm');
+            if (!form) { console.error('contactForm not found'); return; }
+
+            console.log('Booking capture attached to form:', form);
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                e.stopImmediatePropagation(); // block any other handlers
+                e.stopImmediatePropagation();
 
-                const btn = form.querySelector('button[type="submit"]');
-                const original = btn.innerHTML;
+                console.log('Form submitted — saving booking...');
 
-                const checkin  = document.getElementById('checkin').value;
-                const checkout = document.getElementById('checkout').value;
+                var btn = form.querySelector('button[type="submit"]');
+                var original = btn.innerHTML;
 
-                // Format date from YYYY-MM-DD to "Apr 3, 2026"
+                var checkin  = document.getElementById('checkin').value;
+                var checkout = document.getElementById('checkout').value;
+
                 function fmtDate(d) {
                     if (!d) return '';
-                    const [y, m, day] = d.split('-');
-                    return new Date(y, m-1, day).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                    var parts = d.split('-');
+                    return new Date(parts[0], parts[1]-1, parts[2]).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
                 }
 
-                const booking = {
+                var booking = {
                     id: 'bk_' + Date.now(),
                     timestamp: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
                     name: (document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value).trim(),
@@ -295,21 +297,26 @@
                     status: 'new'
                 };
 
-                // Save immediately
+                console.log('Booking object:', booking);
+
                 try {
-                    const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                    var bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
                     bookings.push(booking);
                     localStorage.setItem('bookings', JSON.stringify(bookings));
-                } catch(err) { console.error('Save failed:', err); }
+                    console.log('Saved! Total bookings:', bookings.length);
+                } catch(err) {
+                    console.error('localStorage save failed:', err);
+                    alert('Error saving booking: ' + err.message);
+                    return;
+                }
 
-                // UI feedback
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 btn.disabled = true;
 
-                setTimeout(() => {
+                setTimeout(function () {
                     btn.innerHTML = '<i class="fas fa-check"></i> Inquiry Sent!';
                     btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
-                    setTimeout(() => {
+                    setTimeout(function () {
                         btn.innerHTML = original;
                         btn.style.background = '';
                         btn.disabled = false;
@@ -317,8 +324,8 @@
                     }, 3000);
                 }, 1000);
 
-            }, true); // ← capture phase: fires BEFORE script.js bubble-phase handlers
-        });
+            }, true);
+        })();
     </script>
     <nav class="mobile-app-nav">
         <a href="index.html" class="app-nav-item"><i class="fas fa-home"></i><span>Home</span></a>

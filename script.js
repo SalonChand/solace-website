@@ -288,13 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================================
     // CONTACT FORM (UI feedback only)
     // =============================================
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            // Booking save is handled by contact.html inline script (capture phase)
-            // This handler is intentionally left empty to avoid duplicates
-        });
-    }
+    // Contact form booking save handled in contact.html inline script
 
     // =============================================
     // SMOOTH SCROLL FOR ANCHOR LINKS
